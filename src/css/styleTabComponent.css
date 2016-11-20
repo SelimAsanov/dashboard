@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.tabs {
+    border: 1px solid lightgrey;
+    width: 95%;
+    margin: auto;
+    border-radius: 3px;
+}
+
+.tabsLabels li {
+    display: inline-block;
+}
+
+.tabsLabels li a {
+    display: block;
+    text-decoration: none;
+    border-bottom: 2px solid beige;
+    padding: 0 20px;
+    color: black;
+}
+
+.tabsLabels li a.active {
+    border-bottom-color: dodgerblue;
+}
+
+.tabsContainer {
+    padding-left: 50px;
+}
