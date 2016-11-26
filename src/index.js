@@ -1,7 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Dashboard from './js/App';
-import './css/index.css';
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Dashboard = require('./js/App');
+require('./css/index.css');
+
 
 ReactDOM.render(
     <Dashboard />,

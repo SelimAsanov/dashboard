@@ -1,9 +1,9 @@
 var React = require('react');
 var ChartJS = require('C:/Users/Selim/Documents/Projects/dashboard/node_modules/chart.js');
 
-class Chart extends React.Component {
+const Chart = React.createClass({
 
-    componentDidMount() {
+    componentDidMount : function () {
         let ctx = document.getElementById('myChart').getContext('2d');
         let lineOptions = {
             responsive: true
@@ -14,17 +14,17 @@ class Chart extends React.Component {
             data: this.processData(),
             options: lineOptions
         });
-    }
+    },
 
-    getProperty(index) {
+    getProperty: function (index) {
         return this.props.data.filter(function (obj) {
             return index in obj && typeof obj[index] === 'number';
         }).map(function (obj) {
             return obj[index];
         });
-    }
+    },
 
-    processData() {
+    processData: function () {
 
         return {
             labels: ['2015/Q1', '2015/Q2', '2015/Q3', '2015/Q4', '2016/Q1', '2016/Q2', '2016/Q3'],
@@ -49,13 +49,13 @@ class Chart extends React.Component {
                 data: this.getProperty('your')
             }]
         }
-    }
+    },
 
-    render() {
+    render: function () {
         return(
             <canvas id="myChart" width="400px" height="300px"></canvas>
         );
     }
-}
+});
 
 module.exports = Chart;
