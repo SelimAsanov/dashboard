@@ -1,7 +1,7 @@
 var React = require('react');
 var Chart = require('./Chart');
 var Tab = require('./Tab');
-var TabContainer = require('./TabContainer');
+var TabComponent = require('./TabComponent');
 var Table = require('./Table');
 var jsonData = require('../data/data');
 
@@ -15,7 +15,7 @@ const Dashboard = React.createClass({
         return (
             <div>
               <Chart data={jsonData.summary[0].data} />
-              <TabContainer selected={0}>
+              <TabComponent>
                   <Tab label="EBITDA">
                       <Table data={this.getKPIData('EBITDA %')} />
                   </Tab>
@@ -28,7 +28,7 @@ const Dashboard = React.createClass({
                   <Tab label="Debt to Equity Ratio">
                       <Table data={this.getKPIData('Debt to Equity Ratio')} />
                   </Tab>
-              </TabContainer>
+              </TabComponent>
             </div>
         );
     }
